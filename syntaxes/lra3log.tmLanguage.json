@@ -1,0 +1,108 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "LRA3 Logfile",
+    "patterns": [{
+            "include": "#strings"
+        },
+        {
+            "begin": "^((?:\\d{4}-\\d{2}-\\d{2} )?(\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(ERROR)]\\[(\\S*)] : )",
+            "end": "^(?=(?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3})",
+            "name": "constant",
+            "captures": {
+                "1": {
+                    "name": "invalid"
+                },
+                "2": {
+                    "name": "markup.bold"
+                },
+                "3": {
+                    "name": "markup.italic"
+                },
+                "4": {
+                    "name": "markup.italic"
+                }
+            },
+            "patterns": [{
+                "include": "#strings"
+            }]
+        },
+        {
+            "begin": "^((?:\\d{4}-\\d{2}-\\d{2} )?(\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(DEBUG)]\\[(\\S*)] : )",
+            "end": "^(?=(?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3})",
+            "name": "constant",
+            "captures": {
+                "1": {
+                    "name": "comment"
+                },
+                "2": {
+                    "name": "markup.bold"
+                },
+                "3": {
+                    "name": "markup.italic"
+                },
+                "4": {
+                    "name": "markup.italic"
+                }
+            },
+            "patterns": [{
+                "include": "#strings"
+            }]
+        },
+        {
+            "begin": "^((?:\\d{4}-\\d{2}-\\d{2} )?(\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(WARN )]\\[(\\S*)] : )",
+            "end": "^(?=(?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3})",
+            "name": "constant",
+            "captures": {
+                "1": {
+                    "name": "variable.language"
+                },
+                "2": {
+                    "name": "markup.bold"
+                },
+                "3": {
+                    "name": "markup.italic"
+                },
+                "4": {
+                    "name": "markup.italic"
+                }
+            },
+            "patterns": [{
+                "include": "#strings"
+            }]
+        },
+        {
+            "begin": "^((?:\\d{4}-\\d{2}-\\d{2} )?(\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(INFO )]\\[(\\S*)] : )",
+            "end": "^(?=(?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3})",
+            "name": "constant",
+            "captures": {
+                "1": {
+                    "name": "constant"
+                },
+                "2": {
+                    "name": "markup.bold"
+                },
+                "3": {
+                    "name": "markup.italic"
+                },
+                "4": {
+                    "name": "markup.italic"
+                }
+            },
+            "patterns": [{
+                "include": "#strings"
+            }]
+        }
+    ],
+    "repository": {
+        "strings": {
+            "name": "string.quoted.double.lra3log",
+            "begin": "[\"']",
+            "end": "[\"']",
+            "patterns": [{
+                "name": "constant.character.escape.lra3log",
+                "match": "\\\\."
+            }]
+        }
+    },
+    "scopeName": "source.lra3log"
+}

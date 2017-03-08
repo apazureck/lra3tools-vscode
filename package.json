@@ -1,0 +1,27 @@
+{
+    "name": "lra3tools",
+    "displayName": "lra3tools",
+    "description": "Tools for LRA 3",
+    "version": "0.0.1",
+    "publisher": "apazureck",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lra3log",
+            "aliases": ["LRA3 Logfile", "lra3log"],
+            "extensions": [".log"],
+            "configuration": "./language-configuration.json",
+            "firstLine": "^(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(ERROR|DEBUG|INFO|WARN)\\s?]"
+        }],
+        "grammars": [{
+            "language": "lra3log",
+            "scopeName": "source.lra3log",
+            "path": "./syntaxes/lra3log.tmLanguage.json"
+        }]
+    }
+}
