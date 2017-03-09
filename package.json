@@ -2,7 +2,7 @@
     "name": "lra3tools",
     "displayName": "lra3tools",
     "description": "Tools for LRA 3",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "license": "MIT",
     "icon": "LR_icon_plasstisch_orange.ico",
     "publisher": "apazureck",
@@ -27,6 +27,24 @@
                 "command": "removeDateColumn",
                 "icon": "LR_icon_plasstisch_orange.ico",
                 "title": "Remove Date Column"
+            },
+            {
+                "category": "LRA3 Log",
+                "command": "groupByMinute",
+                "icon": "LR_icon_plasstisch_orange.ico",
+                "title": "Group Entries by Minute"
+            },
+            {
+                "category": "LRA3 Log",
+                "command": "groupByHour",
+                "icon": "LR_icon_plasstisch_orange.ico",
+                "title": "Group Entries by Hour"
+            },
+            {
+                "category": "LRA3 Log",
+                "command": "groupBySecond",
+                "icon": "LR_icon_plasstisch_orange.ico",
+                "title": "Group Entries by Second"
             }
         ],
         "languages": [
@@ -40,7 +58,7 @@
                     ".log"
                 ],
                 "configuration": "./language-configuration.json",
-                "firstLine": "^((?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(ERROR|DEBUG|INFO|WARN)\\s?]"
+                "firstLine": "^\\s*((?:\\d{4}-\\d{2}-\\d{2} )?\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(ERROR|DEBUG|INFO|WARN)\\s?]"
             }
         ],
         "grammars": [
