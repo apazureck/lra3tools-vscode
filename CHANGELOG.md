@@ -1,7 +1,9 @@
 # Change Log
-All notable changes to the "lra3tools" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.2.0 2017-03-09 [Remove Date]
 
-## [Unreleased]
-- Initial release
+- **Added** Command to remove Date (not time)
+
+## 0.1.0 2017-03-08 [Initial release]
+
+- **Added** Logfile Syntax Highlighting
